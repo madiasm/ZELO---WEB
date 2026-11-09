@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZELO - Obrigações do MEI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="container">
+            <h1>ZELO</h1>
+            <p>Controle de obrigações contábeis para MEI</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="resumo">
+            <div class="indicador">
+                <span id="total">0</span>
+                <small>Total</small>
+            </div>
+            <div class="indicador">
+                <span id="pendentes">0</span>
+                <small>Pendentes</small>
+            </div>
+            <div class="indicador atrasado">
+                <span id="atrasadas">0</span>
+                <small>Atrasadas</small>
+            </div>
+            <div class="indicador concluido">
+                <span id="concluidas">0</span>
+                <small>Concluídas</small>
+            </div>
+        </section>
+
+        <section class="cartao">
+            <h2 id="titulo-form">Nova obrigação</h2>
+            <form id="formulario">
+                <input type="hidden" id="id">
+
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" maxlength="120" required>
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="2"></textarea>
+
+                <div class="linha">
+                    <div>
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo">
+                            <option value="DAS">DAS</option>
+                            <option value="Alvará">Alvará</option>
+                            <option value="Declaração">Declaração</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="data">Vencimento</label>
+                        <input type="date" id="data" required>
+                    </div>
+                    <div>
+                        <label for="valor">Valor (R$)</label>
+                        <input type="number" id="valor" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <p id="mensagem" class="mensagem"></p>
+
+                <div class="botoes">
+                    <button type="submit" id="salvar">Salvar</button>
+                    <button type="button" id="cancelar" class="secundario" hidden>Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Minhas obrigações</h2>
+            <div id="lista" class="lista"></div>
+        </section>
+
+        <section class="cartao">
+            <h2>Sobre o projeto</h2>
+            <p>
+                Aplicação web feita para o trabalho prático de contêineres. Ela é uma versão
+                web do ZELO, aplicativo desenvolvido no TCC de Ciência da Computação.
+            </p>
+            <ul class="docs">
+                <li><strong>Frontend:</strong> HTML, CSS e JavaScript e é entregue pelo Nginx (servidor web).</li>
+                <li><strong>Backend:</strong> API em Python com Flask.</li>
+                <li><strong>Banco de dados:</strong> PostgreSQL, com volume para manter os dados.</li>
+                <li><strong>Orquestração:</strong> Docker Compose, com rede própria e variáveis de ambiente.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">ZELO &middot; Trabalho de Contêiner Docker</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
