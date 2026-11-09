@@ -1,6 +1,6 @@
 services:
   database:
-    image: postgres:16-alpine
+    build: ./database
     container_name: zelo_database
     restart: unless-stopped
     environment:
@@ -9,7 +9,6 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - zelo_dados:/var/lib/postgresql/data
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - zelo_rede
     healthcheck:
