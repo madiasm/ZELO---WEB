@@ -37,6 +37,8 @@ services:
     build: ./frontend
     container_name: zelo_frontend
     restart: unless-stopped
+    ports:
+      - "1009:80"
     depends_on:
       - backend
     networks:

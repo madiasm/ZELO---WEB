@@ -2,7 +2,3 @@ services:
   backend:
     ports:
       - "5000:5000"
-
-  frontend:
-    ports:
-      - "8080:80"
